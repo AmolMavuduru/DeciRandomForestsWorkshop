@@ -25,9 +25,18 @@ dtree.fit(X_train,y_train)        #Actually trains the decision tree
 predictions = dtree.predict(X_test)
 from sklearn.metrics import classification_report,confusion_matrix
 
+print("Decision Tree Classification Report:")
 print(classification_report(y_test, predictions)) #Prints the output of the decision tree classification.
 
+#Random forests code below:
+from sklearn.ensemble import RandomForestClassifier
+rfc = RandomForestClassifier(n_estimators = 100)
+rfc.fit(X_train, y_train)
 
+rfc_prediction = rfc.predict(X_test)
+
+print("Random Forests Classification Report:")
+print(classification_report(y_test, rfc_prediction))
 
 
 
